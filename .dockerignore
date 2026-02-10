@@ -1,0 +1,14 @@
+# Docker ignore file
+target/
+.mvn/
+mvnw
+mvnw.cmd
+.env
+.env.local
+*.log
+.DS_Store
+.idea/
+*.iml
+.git/
+.gitignore
+README.md

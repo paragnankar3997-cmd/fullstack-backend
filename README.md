@@ -67,7 +67,55 @@ mvn spring-boot:run
 mvn clean package -DskipTests
 ```
 
+## 🐳 Docker Deployment
+
+### Build and Run with Docker
+
+```bash
+# Build Docker image
+docker build -t fullstack-backend .
+
+# Run container
+docker run -p 8080:8080 \
+  -e DATABASE_URL="your_neon_url" \
+  -e DATABASE_USERNAME="your_username" \
+  -e DATABASE_PASSWORD="your_password" \
+  fullstack-backend
+```
+
+### Using Docker Compose
+
+```bash
+# Create .env file with your credentials
+cp .env.example .env
+
+# Start the application
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop the application
+docker-compose down
+```
+
 ## 🌐 Deployment (Render)
+
+### Option 1: Docker Deployment (Recommended)
+
+1. Push this repository to GitHub
+2. Create a new Web Service on Render
+3. Configure:
+   - **Environment**: `Docker`
+   - **Dockerfile Path**: `./Dockerfile`
+4. Set environment variables:
+   - `DATABASE_URL`: Your Neon connection string
+   - `DATABASE_USERNAME`: Your Neon username
+   - `DATABASE_PASSWORD`: Your Neon password
+   - `PORT`: `8080`
+5. Deploy!
+
+### Option 2: Maven Deployment
 
 1. Push this repository to GitHub
 2. Create a new Web Service on Render
