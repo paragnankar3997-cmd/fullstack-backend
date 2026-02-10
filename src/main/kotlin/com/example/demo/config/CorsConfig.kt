@@ -11,7 +11,8 @@ class CorsConfig : WebMvcConfigurer {
             .allowedOrigins(
                 "http://localhost:5173",
                 "http://localhost:3000",
-                "https://*.vercel.app"
+                "https://*.vercel.app",
+                "https://fullstack-frontend-two-beta.vercel.app"
             )
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowedHeaders("*")
